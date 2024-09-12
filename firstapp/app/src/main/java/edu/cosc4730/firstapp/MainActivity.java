@@ -1,6 +1,7 @@
 package edu.cosc4730.firstapp;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,12 +11,11 @@ import androidx.core.view.WindowInsetsCompat;
 
 import edu.cosc4730.firstapp.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MainFragment.NameListener {
 
     MainFragment mainFragment;
-    private ActivityMainBinding binding;
 
-    String TAG = "TEST";
+    String TAG = "MAIN_OUTPUT_LOG";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,13 +28,17 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        edu.cosc4730.firstapp.databinding.ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         if (savedInstanceState == null) {
             mainFragment = new MainFragment();
             getSupportFragmentManager().beginTransaction().add(binding.mainContainer.getId(), mainFragment).commit();
         }
+    }
+
+    @Override
+    public void OnTextLogged(String text) {
+        Log.v(TAG, "[+] ADDED: " + text);
     }
 }
