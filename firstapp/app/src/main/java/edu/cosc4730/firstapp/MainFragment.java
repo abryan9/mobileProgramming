@@ -53,7 +53,7 @@ public class MainFragment extends Fragment implements Button.OnClickListener {
         try {
             listener = (MainActivity) activity;
         } catch (ClassCastException e) {
-            throw new ClassCastException(activity.toString()
+            throw new ClassCastException(activity
                     + " [-] CLASS ERROR: Must implement NameListener.");
         }
     }
