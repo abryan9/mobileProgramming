@@ -20,39 +20,24 @@ public class MainFragment extends Fragment implements Button.OnClickListener {
     private NameListener listener;
 
     public interface NameListener {
-        void OnTextLogged(String text);
+        void onTextLogged(String text);
     }
 
-    String TAG = "FRAGMENT_OUTPUT_LOG";
-
+    // Init and Destroy functions
+    // ---------------------------------------------------------------------------------------------
+    // SuppressLint gets rid of the stupid "can't translate" warnings
     @SuppressLint("SetTextI18n")
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // pack binding and define listeners
+        // requirement 2a
         binding = FragmentMainBinding.inflate(inflater, container, false);
-
         binding.enterButton.setOnClickListener(this);
+        // initial variables
+        // init for requirement 5
         binding.output.setText("Hello, World!");
 
-
-
         return binding.getRoot();
-    }
-
-    @SuppressLint("SetTextI18n")
-    public void onClick(View v) {
-        if (v == binding.enterButton) {
-            String box_contents = binding.nameInput.getText().toString();
-            if (box_contents.compareTo("") != 0) {
-                binding.output.setText("Hello, " + box_contents + "!");
-            } else {
-                binding.output.setText("Hello, World!");
-            }
-            Log.v(TAG, "[!] SET: " + box_contents);
-            if (listener != null) {
-                listener.OnTextLogged(box_contents);
-            }
-
-        }
     }
 
     @Override
@@ -78,4 +63,29 @@ public class MainFragment extends Fragment implements Button.OnClickListener {
         super.onDetach();
         listener = null;
     }
+    // ---------------------------------------------------------------------------------------------
+
+    // event listeners
+    // ---------------------------------------------------------------------------------------------
+    @SuppressLint("SetTextI18n")
+    public void onClick(View v) {
+        // I define this listener here instead of inside of the function call in line 34
+        // there is no reason, I just felt like it
+        // requirement 5
+        if (v == binding.enterButton) {
+            String box_contents = binding.nameInput.getText().toString();
+            if (box_contents.compareTo("") != 0) {
+                binding.output.setText("Hello, " + box_contents + "!");
+            } else {
+                binding.output.setText("Hello, World!");
+            }
+            Log.v("FRAGMENT_OUTPUT_LOG", "[!] SET: " + box_contents);
+            if (listener != null) {
+                // requirement 2b
+                listener.onTextLogged(box_contents);
+            }
+
+        }
+    }
+    // ---------------------------------------------------------------------------------------------
 }

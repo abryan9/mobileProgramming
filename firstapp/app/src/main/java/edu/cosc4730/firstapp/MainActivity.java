@@ -13,13 +13,12 @@ import edu.cosc4730.firstapp.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity implements MainFragment.NameListener {
 
-    MainFragment mainFragment;
-
-    String TAG = "MAIN_OUTPUT_LOG";
+    // mainFragment and TAG could be defined here, but have been moved to a more localized scope
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // Android Studio initialized with this, so I opted to keep it even know it's not super necessary
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main_container), (v, insets) -> {
@@ -28,17 +27,20 @@ public class MainActivity extends AppCompatActivity implements MainFragment.Name
             return insets;
         });
 
+        // AS was dead set on redefining this line like this
         edu.cosc4730.firstapp.databinding.ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         if (savedInstanceState == null) {
-            mainFragment = new MainFragment();
+            // requirement 1b
+            MainFragment mainFragment = new MainFragment();
             getSupportFragmentManager().beginTransaction().add(binding.mainContainer.getId(), mainFragment).commit();
         }
     }
 
     @Override
-    public void OnTextLogged(String text) {
-        Log.v(TAG, "[+] ADDED: " + text);
+    // requirement 1a
+    public void onTextLogged(String text) {
+        Log.v("MAIN_OUTPUT_LOG", "[+] ADDED: " + text);
     }
 }
