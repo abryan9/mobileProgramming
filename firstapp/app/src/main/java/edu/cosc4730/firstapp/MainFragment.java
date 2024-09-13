@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.app.Activity;
+import android.content.Context;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -44,7 +46,7 @@ public class MainFragment extends Fragment implements Button.OnClickListener {
     public void onClick(View v) {
         if (v == binding.enterButton) {
             String box_contents = binding.nameInput.getText().toString();
-            if (binding.nameInput.getText().toString().compareTo("") != 0) {
+            if (box_contents.compareTo("") != 0) {
                 binding.output.setText("Hello, " + box_contents + "!");
             } else {
                 binding.output.setText("Hello, World!");
@@ -55,5 +57,29 @@ public class MainFragment extends Fragment implements Button.OnClickListener {
             }
 
         }
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        Activity activity = requireActivity();
+        try {
+            listener = (MainActivity) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        listener = null;
     }
 }
