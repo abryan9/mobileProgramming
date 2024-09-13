@@ -25,10 +25,6 @@ public class MainFragment extends Fragment implements Button.OnClickListener {
 
     String TAG = "FRAGMENT_OUTPUT_LOG";
 
-    public MainFragment() {
-
-    }
-
     @SuppressLint("SetTextI18n")
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
