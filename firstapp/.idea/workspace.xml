@@ -22,12 +22,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9178f77-5fe0-4f9b-82b0-63175426559f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../calculator/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../calculator/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calculator/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../calculator/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calculator/app/src/main/java/edu/cosc4730/calculator/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../calculator/app/src/main/java/edu/cosc4730/calculator/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calculator/app/src/main/java/edu/cosc4730/calculator/MainFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../calculator/app/src/main/java/edu/cosc4730/calculator/MainFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tipCalculator/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../tipCalculator/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tipCalculator/app/src/main/java/edu/cosc4730/tipcalculator/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tipCalculator/app/src/main/java/edu/cosc4730/tipcalculator/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tipCalculator/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tipCalculator/app/src/main/res/layout/activity_main.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
