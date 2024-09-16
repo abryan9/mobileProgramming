@@ -18,7 +18,9 @@ public class MainFragment extends Fragment {
             ViewGroup container,
             Bundle savedInstanceState
     ) {
+        binding = FragmentMainBinding.inflate(inflater, container, false);
 
-        return;
+
+        return binding.getRoot();
     }
 }
