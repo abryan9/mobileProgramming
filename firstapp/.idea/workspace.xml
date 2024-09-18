@@ -22,9 +22,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9178f77-5fe0-4f9b-82b0-63175426559f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../tipCalculator/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../tipCalculator/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tipCalculator/app/src/main/java/edu/cosc4730/tipcalculator/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tipCalculator/app/src/main/java/edu/cosc4730/tipcalculator/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tipCalculator/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tipCalculator/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tipCalculator/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tipCalculator/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tipCalculator/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tipCalculator/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tipCalculator/app/src/main/res/layout/fragment_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tipCalculator/app/src/main/res/layout/fragment_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tipCalculator/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tipCalculator/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +37,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=/home/beth-c137/.android/avd/Pixel_Fold_API_35.avd)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -111,7 +114,7 @@
     "com.google.services.firebase.aqiPopupShown": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/abryan9/Desktop/mobileProgramming/firstapp",
+    "last_opened_file_path": "/home/beth-c137/Desktop/mobileProgramming/firstapp",
     "settings.editor.selected.configurable": "AndroidSdkUpdater"
   }
 }]]></component>
