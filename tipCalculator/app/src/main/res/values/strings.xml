@@ -3,11 +3,12 @@
     <string name="top_bar">Tip Calculator</string>
     <string name="bill">Bill:</string>
     <string name="tip">Tip:</string>
+    <string name="no_money">$0.00</string>
     <string name="ten_percent">10%</string>
     <string name="fifteen_percent">15%</string>
-    <string name="other">Other:</string>
+    <string name="other">Other (%):</string>
     <string name="total">Total:</string>
-    <string name="total_hint">0.00</string>
-    <string name="round_total">Round total up</string>
-    <string name="round_tip">Round tip up</string>
+    <string name="round_header">Round Up</string>
+    <string name="round_total">Total</string>
+    <string name="round_tip">Tip</string>
 </resources>

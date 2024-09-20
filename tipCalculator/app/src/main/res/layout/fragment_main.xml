@@ -23,9 +23,9 @@
     <TextView
         android:id="@+id/bill_text"
         android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/top_bar"
+        app:layout_constraintTop_toTopOf="@+id/bill_enter"
         android:layout_marginTop="15dp"
         android:layout_marginStart="10dp"
         android:text="@string/bill"
@@ -34,24 +34,24 @@
 
     <EditText
         android:id="@+id/bill_enter"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/top_bar"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="10dp"
-        android:hint="@string/bill"
-        android:inputType="number"
-        android:autofillHints="name"
+        android:hint="@string/no_money"
+        android:inputType="numberDecimal"
+        android:autofillHints="none"
         android:textSize="35sp">
     </EditText>
 
     <TextView
         android:id="@+id/tip_text"
         android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/bill_text"
+        app:layout_constraintTop_toTopOf="@id/tip_enter"
         android:layout_marginTop="15dp"
         android:layout_marginStart="10dp"
         android:text="@string/tip"
@@ -60,22 +60,22 @@
 
     <EditText
         android:id="@+id/tip_enter"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/bill_enter"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="10dp"
-        android:hint="@string/tip"
-        android:inputType="number"
-        android:autofillHints="name"
+        android:hint="@string/no_money"
+        android:inputType="numberDecimal"
+        android:autofillHints="none"
         android:textSize="35sp">
     </EditText>
 
     <Button
         android:id="@+id/ten_percent"
         android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/tip_enter"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="15dp"
@@ -87,10 +87,10 @@
     <Button
         android:id="@+id/fifteen_percent"
         android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/tip_enter"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ten_percent"
+        app:layout_constraintEnd_toStartOf="@id/tip_custom"
         android:layout_marginStart="0dp"
         android:layout_marginTop="15dp"
         android:text="@string/fifteen_percent"
@@ -99,22 +99,22 @@
 
     <EditText
         android:id="@+id/tip_custom"
-        android:layout_width="100dp"
-        android:layout_height="60dp"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tip_enter"
         android:layout_marginEnd="15dp"
         android:layout_marginTop="5dp"
         android:hint="@string/other"
-        android:inputType="number"
-        android:autofillHints="name"
+        android:inputType="numberDecimal"
+        android:autofillHints="none"
         android:textSize="25sp">
     </EditText>
 
     <TextView
         android:id="@+id/total"
         android:layout_width="200dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tip_custom"
         android:layout_marginStart="15dp"
@@ -126,51 +126,77 @@
     <TextView
         android:id="@+id/total_output"
         android:layout_width="200dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tip_custom"
         android:layout_marginEnd="15dp"
         android:layout_marginTop="5dp"
-        android:hint="@string/total_hint"
+        android:hint="@string/no_money"
         android:textSize="35sp">
     </TextView>
 
-    <TextView
-        android:id="@+id/round_total"
-        android:layout_width="170dp"
-        android:layout_height="60dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/total"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="5dp"
-        android:text="@string/round_total"
-        android:textSize="25sp">
-    </TextView>
-
-    <SeekBar
-        android:id="@+id/three_switch"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="150dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/round_total"
-        android:progressBackgroundTint="@color/design_default_color_background"
-        android:progressTint="@color/design_default_color_background"
-        android:max="2"
-        android:progress="1">
-    </SeekBar>
-
-    <TextView
-        android:id="@+id/round_tip"
-        android:layout_width="170dp"
-        android:layout_height="60dp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/total"
-        android:layout_marginEnd="15dp"
-        android:layout_marginTop="5dp"
-        android:text="@string/round_tip"
-        android:textSize="25sp">
-    </TextView>
+        android:elevation="8dp"
+        android:background="@color/design_default_color_background">
+
+        <TextView
+            android:id="@+id/round_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/round_header"
+            android:textSize="35sp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/round_total"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/round_header"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/round_total"
+            android:textSize="25sp">
+        </TextView>
+
+        <SeekBar
+            android:id="@+id/three_switch"
+            style="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/round_total"
+            app:layout_constraintEnd_toStartOf="@id/round_tip"
+            app:layout_constraintTop_toBottomOf="@id/round_header"
+            android:layout_marginTop="15dp"
+            android:progressBackgroundTint="@color/design_default_color_background"
+            android:progressTint="@color/design_default_color_background"
+            android:max="2"
+            android:progress="1">
+        </SeekBar>
+
+        <TextView
+            android:id="@+id/round_tip"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/round_header"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/round_tip"
+            android:textSize="25sp">
+        </TextView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
