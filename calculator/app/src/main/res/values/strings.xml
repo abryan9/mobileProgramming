@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">calculator</string>
+    <string name="memory_hint">Memory:</string>
+    <string name="active_hint">Current:</string>
+    <string name="logo">Jimmy Instruments</string>
+    <string name="model_num">JI -108</string>
 </resources>

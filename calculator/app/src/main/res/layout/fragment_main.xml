@@ -1,17 +1,341 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/fragmentContainer"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/ti_blue"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/memory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:background="@color/white"
+            android:hint="@string/memory_hint"
+            android:textSize="35sp"
+            android:gravity="end">
+        </TextView>
+
+        <TextView
+            android:id="@+id/active"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/memory"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:background="@color/white"
+            android:hint="@string/active_hint"
+            android:textSize="45sp"
+            android:gravity="end">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/active"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:text="@string/logo"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:fontFamily="sans-serif-smallcaps">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/active"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="30dp"
+            android:text="@string/model_num"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:gravity="end"
+            android:fontFamily="sans-serif-smallcaps">
+        </TextView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/header"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="25dp">
+
+        <Button
+            android:id="@+id/clear_all"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="30dp"
+            android:backgroundTint="@color/ti_red"
+            android:text="C"
+            android:textSize="29sp"
+            android:fontFamily="sans-serif-smallcaps">
+        </Button>
+
+        <Button
+            android:id="@+id/clear_element"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintStart_toEndOf="@id/clear_all"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/ti_red"
+            android:text="CE"
+            android:textSize="29sp"
+            android:fontFamily="sans-serif-smallcaps">
+        </Button>
+
+        <Button
+            android:id="@+id/power"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintStart_toEndOf="@id/clear_element"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/ti_red"
+            android:text="^"
+            android:textSize="45sp"
+            android:fontFamily="sans-serif-smallcaps">
+        </Button>
+
+        <Button
+            android:id="@+id/divide"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintStart_toEndOf="@id/power"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/ti_red"
+            android:text="/"
+            android:textSize="35sp"
+            android:fontFamily="sans-serif-smallcaps">
+        </Button>
+
+        <Button
+            android:id="@+id/seven"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clear_all"
+            android:layout_marginStart="30dp"
+            android:backgroundTint="@color/ti_red"
+            android:text="7"
+            android:textSize="35sp"
+            android:fontFamily="sans-serif-smallcaps">
+        </Button>
+
+        <Button
+            android:id="@+id/eight"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintStart_toEndOf="@id/clear_all"
+            app:layout_constraintTop_toBottomOf="@id/clear_all"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/ti_red"
+            android:text="8"
+            android:textSize="35sp"
+            android:fontFamily="sans-serif-smallcaps">
+        </Button>
+
+        <Button
+            android:id="@+id/nine"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintStart_toEndOf="@id/clear_element"
+            app:layout_constraintTop_toBottomOf="@id/clear_all"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/ti_red"
+            android:text="9"
+            android:textSize="35sp"
+            android:fontFamily="sans-serif-smallcaps">
+        </Button>
+
+        <Button
+            android:id="@+id/multiply"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintStart_toEndOf="@id/power"
+            app:layout_constraintTop_toBottomOf="@id/clear_all"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/ti_red"
+            android:text="x"
+            android:textSize="35sp"
+            android:fontFamily="sans-serif-smallcaps">
+        </Button>
+
+        <Button
+            android:id="@+id/four"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/seven"
+            android:layout_marginStart="30dp"
+            android:backgroundTint="@color/ti_red"
+            android:text="4"
+            android:textSize="35sp"
+            android:fontFamily="sans-serif-smallcaps">
+        </Button>
+
+        <Button
+            android:id="@+id/five"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintStart_toEndOf="@id/clear_all"
+            app:layout_constraintTop_toBottomOf="@id/seven"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/ti_red"
+            android:text="5"
+            android:textSize="35sp"
+            android:fontFamily="sans-serif-smallcaps">
+        </Button>
+
+        <Button
+            android:id="@+id/six"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintStart_toEndOf="@id/clear_element"
+            app:layout_constraintTop_toBottomOf="@id/seven"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/ti_red"
+            android:text="6"
+            android:textSize="35sp"
+            android:fontFamily="sans-serif-smallcaps">
+        </Button>
+
+        <Button
+            android:id="@+id/subtract"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintStart_toEndOf="@id/power"
+            app:layout_constraintTop_toBottomOf="@id/seven"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/ti_red"
+            android:text="-"
+            android:textSize="35sp"
+            android:fontFamily="sans-serif-smallcaps">
+        </Button>
+
+        <Button
+            android:id="@+id/one"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/four"
+            android:layout_marginStart="30dp"
+            android:backgroundTint="@color/ti_red"
+            android:text="1"
+            android:textSize="35sp"
+            android:fontFamily="sans-serif-smallcaps">
+        </Button>
+
+        <Button
+            android:id="@+id/two"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintStart_toEndOf="@id/clear_all"
+            app:layout_constraintTop_toBottomOf="@id/four"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/ti_red"
+            android:text="2"
+            android:textSize="35sp"
+            android:fontFamily="sans-serif-smallcaps">
+        </Button>
+
+        <Button
+            android:id="@+id/three"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintStart_toEndOf="@id/clear_element"
+            app:layout_constraintTop_toBottomOf="@id/four"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/ti_red"
+            android:text="3"
+            android:textSize="35sp"
+            android:fontFamily="sans-serif-smallcaps">
+        </Button>
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintStart_toEndOf="@id/power"
+            app:layout_constraintTop_toBottomOf="@id/four"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/ti_red"
+            android:text="+"
+            android:textSize="35sp"
+            android:fontFamily="sans-serif-smallcaps">
+        </Button>
+
+        <Button
+            android:id="@+id/negate"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/one"
+            android:layout_marginStart="30dp"
+            android:backgroundTint="@color/ti_red"
+            android:text="+/-"
+            android:textSize="25sp"
+            android:fontFamily="sans-serif-smallcaps">
+        </Button>
+
+        <Button
+            android:id="@+id/zero"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintStart_toEndOf="@id/clear_all"
+            app:layout_constraintTop_toBottomOf="@id/one"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/ti_red"
+            android:text="0"
+            android:textSize="35sp"
+            android:fontFamily="sans-serif-smallcaps">
+        </Button>
+
+        <Button
+            android:id="@+id/decimal"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintStart_toEndOf="@id/clear_element"
+            app:layout_constraintTop_toBottomOf="@id/one"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/ti_red"
+            android:text="."
+            android:textSize="35sp"
+            android:fontFamily="sans-serif-smallcaps">
+        </Button>
+
+        <Button
+            android:id="@+id/enter"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintStart_toEndOf="@id/power"
+            app:layout_constraintTop_toBottomOf="@id/one"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/ti_red"
+            android:text="="
+            android:textSize="35sp"
+            android:fontFamily="sans-serif-smallcaps">
+        </Button>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
