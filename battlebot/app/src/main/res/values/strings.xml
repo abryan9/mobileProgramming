@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">battlebot</string>
+    <string name="arrow">></string>
+    <string name="move_header">MOVE</string>
+    <string name="shoot_header">SHOOT</string>
+    <string name="ip_header">Connected to IP:</string>
+    <string name="ip_hint">-- Enter IP Address --</string>
+    <string name="connect">Connect!</string>
+</resources>
