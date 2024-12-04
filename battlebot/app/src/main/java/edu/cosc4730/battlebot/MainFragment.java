@@ -26,7 +26,8 @@ import androidx.fragment.app.Fragment;
 import edu.cosc4730.battlebot.databinding.FragmentMainBinding;
 
 public class MainFragment extends Fragment implements View.OnClickListener {
-    Pattern pattern = Pattern.compile("^[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}$", Pattern.CASE_INSENSITIVE);
+    Pattern ip_pattern = Pattern.compile("^[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}$", Pattern.CASE_INSENSITIVE);
+    Pattern op_pattern = Pattern.compile("^Status ([0-9]* [0-9]* )([-0-9]*) ([-0-9]*) [0-9]*$", Pattern.CASE_INSENSITIVE);
 
     int port = 3012;
     NetConnection network = new NetConnection();
@@ -63,8 +64,8 @@ public class MainFragment extends Fragment implements View.OnClickListener {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 String text = binding.ipAddr.getText().toString();
                 if (text.compareTo("") != 0) {
-                    Matcher matcher = pattern.matcher(text);
-                    boolean matchFound = matcher.find();
+                    Matcher ip_matcher = ip_pattern.matcher(text);
+                    boolean matchFound = ip_matcher.find();
                     if (matchFound) {
                         binding.connect.setVisibility(View.VISIBLE);
                         binding.connect.setClickable(true);
@@ -108,8 +109,14 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                 boolean game = true;
                 while (game) {
                     serverComm = in.readLine();
+                    Matcher server_match = op_pattern.matcher(serverComm);
                     if (serverComm.startsWith("Status")) {
-                        out.println(command);
+                        if (command.startsWith("move") && (Integer.parseInt(server_match.group(1)) >= 0)) {
+                            out.println(command);
+                        } else if (command.startsWith("shoot") && (Integer.parseInt(server_match.group(2)) >= 0)) {
+                            out.println(command);
+                        }
+                        out.println("noop");
                     } else if (serverComm.startsWith("Info Dead") || serverComm.startsWith("Info GameOver")) {
                         game = false;
                     } else if (serverComm.startsWith("setup")) {
